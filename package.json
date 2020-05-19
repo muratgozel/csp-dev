@@ -1,0 +1,30 @@
+{
+  "name": "csp-dev",
+  "version": "1.0.0",
+  "description": "Content security policy builder and parser. 🚨",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "NODE_ENV=test jasmine",
+    "commit": "node dev/commit.js commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muratgozel/csp-dev.git"
+  },
+  "keywords": [
+    "content-security-policy",
+    "csp-parser",
+    "csp-builder",
+    "csp"
+  ],
+  "author": "Murat Gözel <murat@gozel.com.tr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muratgozel/csp-dev/issues"
+  },
+  "homepage": "https://github.com/muratgozel/csp-dev#readme",
+  "devDependencies": {
+    "semver": "^7.3.2",
+    "yargs": "^15.3.1"
+  }
+}
