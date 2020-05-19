@@ -1,5 +1,5 @@
 # csp-dev
-Content security policy builder and parser. 🚨
+Spec compliant content security policy builder and parser. 🚨
 
 ![NPM](https://img.shields.io/npm/l/csp-dev)
 [![npm version](https://badge.fury.io/js/csp-dev.svg)](https://badge.fury.io/js/csp-dev)
@@ -12,12 +12,12 @@ npm i -D csp-dev
 ```
 
 ## Use
-Build:
+### Build Policy
 ```js
 const ContentSecurityPolicy = require('csp-dev')
 
 const builder = new ContentSecurityPolicy()
-builder.newDirective('script-src', ['self', 'unsafe-inline', 'nonce-2726c7f26c', '*.trusted.com'])
+builder.newDirective('script-src', ['self', 'unsafe-inline', 'nonce-2726c7f26c', '*.test.com'])
 builder.newDirective('default-src', 'self')
 builder.newDirective('style-src', 'data:')
 
@@ -27,12 +27,12 @@ const builder2 = new ContentSecurityPolicy()
 builder2.load({
   'default-src': ['self'],
   'script-src': [
-    'self', 'unsafe-inline', 'nonce-2726c7f26c', '*.trusted.com'
+    'self', 'unsafe-inline', 'nonce-2726c7f26c', '*.test.com'
   ],
   'style-src': ['data:']
 })
 ```
-Parse:
+### Parse Policy Data
 ```js
 const ContentSecurityPolicy = require('csp-dev')
 
@@ -45,10 +45,36 @@ const parser = new ContentSecurityPolicy(data)
 
 parser.valid() // true|false
 ```
-Share:
+### Share
+Share data as **json**, spec compliant csp **string** or **html** meta tag:
 ```js
-parser.share('json'|'string')
+parser.share('json')
+`
+{
+  'default-src': ['self'],
+  'script-src': [
+    'self', 'unsafe-inline', 'nonce-2726c7f26c', '*.test.com'
+  ],
+  'style-src': ['data:']
+}
+`
+
+parser.share('string')
+`
+default-src 'self'; script-src 'self' 'unsafe-inline' 'nonce-2726c7f26c' *.test.com; style-src data:
+`
+
+parser.share('html')
+`
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'nonce-2726c7f26c' *.test.com; style-src data:">
+`
 ```
+
+## Tests
+See `spec` folder for tests. I'll expand the test suite as I update the library. You can run tests by `npm run test`
+
+## Notes
+The reporting feature of csp hasn't been implemented. I didn't get fully understand but I think there is no accepted standart for it for now.
 
 ---
 

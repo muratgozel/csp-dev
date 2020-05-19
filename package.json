@@ -1,7 +1,7 @@
 {
   "name": "csp-dev",
-  "version": "1.0.0",
-  "description": "Content security policy builder and parser. 🚨",
+  "version": "1.0.1",
+  "description": "Spec compliant content security policy builder and parser. 🚨",
   "main": "src/index.js",
   "scripts": {
     "test": "NODE_ENV=test jasmine",
