@@ -74,10 +74,14 @@ parser.share('html')
 See `spec` folder for tests. I'll expand the test suite as I update the library. You can run tests by `npm run test`
 
 ## Notes
-The reporting feature of csp hasn't been implemented. I didn't get fully understand but I think there is no accepted standart for it for now.
+The reporting feature of csp hasn't been implemented. I haven't get fully understand but I think there is no accepted standart to it for now.
 
 ---
 
 Thanks for watching 🐬
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F1RFO7)
+
+---
+
+Version management of this repository done by [releaser](https://github.com/muratgozel/node-releaser) 🚀
